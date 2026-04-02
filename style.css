@@ -1,0 +1,306 @@
+/* Import font Rubik từ Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  /* Primary Colors */
+  --color-purple-600: hsl(246, 80%, 60%);
+  --color-work: hsl(15, 100%, 70%);
+  --color-play: hsl(195, 74%, 62%);
+  --color-study: hsl(348, 100%, 68%);
+  --color-exercise: hsl(145, 58%, 55%);
+  --color-social: hsl(264, 64%, 52%);
+  --color-self-care: hsl(43, 84%, 65%);
+
+  /* Neutral Colors */
+  --color-navy-950: hsl(226, 43%, 10%); /* Background chính */
+  --color-navy-900: hsl(235, 46%, 20%); /* Card background */
+  --color-purple-500: hsl(235, 45%, 61%); /* Text phụ/Hover */
+  --color-navy-200: hsl(236, 100%, 87%); /* Text sáng */
+
+  /* Typography */
+  --font-family: "Rubik", sans-serif;
+  --font-size-body: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  background-color: var(--color-navy-950);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.container-avatar {
+  margin: 1rem;
+  background-color: var(--color-navy-900);
+  border-radius: 0 0 1rem 1rem;
+  max-width: 300px;
+  width: 100%;
+}
+
+.container-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-purple-600);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.name {
+  margin-left: 2rem;
+}
+
+.name h1 {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.1rem;
+  color: var(--color-navy-200);
+}
+
+.name p {
+  font-weight: 300;
+}
+
+.name span {
+  margin-left: 0.5rem;
+}
+
+/* Change color */
+.container-work.work {
+  box-shadow: 0 2px 10px 5px var(--color-work);
+}
+
+.container-work.play {
+  background-color: var(--color-play);
+  box-shadow: 0 2px 10px 5px var(--color-play);
+}
+
+.container-work.study {
+  background-color: var(--color-study);
+  box-shadow: 0 2px 10px 5px var(--color-study);
+}
+
+.container-work.excercise {
+  background-color: var(--color-exercise);
+  box-shadow: 0 2px 10px 5px var(--color-exercise);
+}
+
+.container-work.social {
+  background-color: var(--color-social);
+  box-shadow: 0 2px 10px 7px var(--color-social);
+}
+
+.container-work.care {
+  background-color: var(--color-self-care);
+  box-shadow: 0 2px 10px 5px var(--color-self-care);
+}
+
+.container-work.excercise .icon-work img {
+  top: -1px;
+  right: 10px;
+}
+/* Change Color */
+
+.container-name img {
+  width: 20%;
+  object-fit: contain;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.container-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+.container-option button:hover {
+  color: var(--color-purple-600);
+}
+
+.container-option button {
+  color: var(--color-purple-500);
+  border: none;
+  background-color: var(--color-navy-900);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.container-work {
+  margin: 1rem;
+  background-color: var(--color-work);
+  border-radius: 0 0 1rem 1rem;
+  max-width: 300px;
+  width: 100%;
+  padding-top: 2.5rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 5px 3px var(--color-purple-600);
+}
+
+.icon-work img {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  right: 15px;
+}
+
+.container-work-title {
+  background-color: var(--color-navy-900);
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.work-icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-icon h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.button-icon {
+  background-color: var(--color-navy-900);
+  border: none;
+  cursor: pointer;
+}
+
+.work-hour {
+  display: flex;
+  margin-top: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.work-hour p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-navy-200);
+}
+
+@media (min-width: 1024px) {
+  body {
+    justify-content: center;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "avatar work play study"
+      "avatar excercise social care";
+    gap: 1rem;
+  }
+
+  .container-avatar {
+    grid-area: avatar;
+  }
+
+  .play {
+    grid-area: play;
+  }
+
+  .work {
+    grid-area: work;
+  }
+
+  .study {
+    grid-area: study;
+  }
+
+  .excercise {
+    grid-area: excercise;
+  }
+
+  .social {
+    grid-area: social;
+  }
+
+  .care {
+    grid-area: care;
+  }
+
+  .container-name {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+  .name {
+    margin-left: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  .container-option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name p {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  .name h1 {
+    margin-left: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-hour {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .work-icon {
+    margin-bottom: 1rem;
+  }
+
+  .container-option {
+    gap: 2rem;
+  }
+
+  .container-name img {
+    width: 30%;
+  }
+}
